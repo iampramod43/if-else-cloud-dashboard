@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="top">
+        <div class="left">
+            <div class="imgContainer">
+                <img src="assets/icons/box.svg" alt="">
+            </div>
+            <div class="headerDetails">
+                <div class="header">
+                    Vendor Breakdown
+                </div>
+                <div class="subHeader">
+                    Keep track of vendors and their security ratings.
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="iconContainer">
+                <img src="assets/icons/dotsVertical.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div echarts style="width: 100%;height:300px !important" [options]="chartOptions" class="chart"></div>
+        
+    </div>
+    <div class="bottom">
+        <app-button label="View full report" ></app-button>
+    </div>
+</div>

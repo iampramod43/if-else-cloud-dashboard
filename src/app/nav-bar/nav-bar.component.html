@@ -1,0 +1,39 @@
+<div class="iconsBar">
+    <div class="top">
+        <div class="logoContainer">
+            <img src="assets/icons/logo.png" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/home.svg" alt="">
+        </div>
+        <div class="iconContainer" *ngIf="!active">
+            <img src="assets/icons/charts.svg" alt="">
+        </div>
+        <div class="iconContainer" *ngIf="active" [ngClass]="{'activeContainer': active}">
+            <img src="assets/icons/chartsActive.svg" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/stack.svg" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/checkList.svg" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/piChart.svg" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/users.svg" alt="">
+        </div>
+    </div>
+    <div class="bottom">
+        <div class="iconContainer">
+            <img src="assets/icons/cogWheel.svg" alt="">
+        </div>
+        <div class="iconContainer">
+            <img src="assets/icons/settings.svg" alt="">
+        </div>
+        <div class="avatar">
+            <img src="assets/icons/avatar.svg" alt="">
+        </div>
+    </div>
+</div>

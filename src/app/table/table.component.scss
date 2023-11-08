@@ -1,0 +1,129 @@
+.main {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 12px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 24px 0 24px;
+        height: 80px;
+
+        .left {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            .label {
+                font-size: 16px;
+                font-weight: 600;
+                color: #282d3b;
+            }
+        }
+    }
+
+    .tableSection {
+        .mdc-data-table__table {
+                border-bottom: solid  #E0E0E0 !important;
+                border-top: solid  #E0E0E0 !important;
+            }
+        .mat-mdc-table tbody,
+        .mat-mdc-table tfoot,
+        .mat-mdc-table thead,
+        .mat-mdc-cell,
+        .mat-mdc-footer-cell,
+        .mat-mdc-header-row,
+        .mat-mdc-row,
+        .mat-mdc-footer-row,
+        .mat-mdc-table .mat-mdc-header-cell {
+
+            :nth-child(5) {
+                width: 250px;
+                font-size: 18px;
+            }
+
+            color: #757B88;
+            height: 68px;
+
+
+            span {
+                display: flex;
+                align-items: center;
+            }
+
+            .memberDetails,
+            .chips,
+            .actionIcons {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .avatar {
+                    width: 48px;
+                    height: 48px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    font-size: 16px;
+                    font-weight: 600;
+
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                    }
+                }
+
+                .nameId {
+                    .name {
+                        font-size: 14px;
+                        font-weight: 600;
+                    }
+                }
+
+                img {
+                    cursor: pointer;
+                }
+            }
+        }
+                .mat-mdc-header-row{
+                    background-color: #F9F8F9;
+                }
+
+        .mat-mdc-row:hover {
+             
+                background: whitesmoke;
+        }
+    }
+
+    .paginationSection {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px 0 24px;
+            height: 80px;
+        .center{
+            .pages{
+                display: flex;
+                    gap: 4px;
+                    .page{
+                        width: 32px;
+                            height: 32px;
+                            
+                            align-items: center;
+                            display: flex;
+                            justify-content: center;
+                            cursor: pointer;
+                    }
+                    .activePage{
+                        background-color: #F9F8F9;
+                        border-radius: 6px;
+                    }
+                    .page:hover{
+                        background-color: #F9F8F9;
+                        border-radius: 6px;
+                    }
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="top">
+        <div class="left">
+            <div class="headerDetails">
+                <div class="header">
+                    Vendors Monitored
+                </div>
+                <div class="subHeader">
+                    You are using 80% of availabel spots.
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="iconContainer">
+                <img src="assets/icons/dotsVertical.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="center">
+        <div class="centerTop">
+            <div echarts style="width: 80%;height:350px !important" [options]="chartOptions" class="chart"></div>
+            <div class="badge">
+                <img src="assets/icons/uptrend.svg" alt="">
+                <div class="text">
+                    10%
+                </div>
+            </div>
+        </div>
+        <div class="centerBottom">
+            <div class="mainLabel">
+                You've almost reached your limit
+            </div>
+            <div class="subText">
+                You are using 80% of available spots.
+                <br>
+                Upgrade plan to monitor more vendors.
+            </div>
+        </div>
+    </div>
+    <div class="bottom">
+        <app-button label="Upgrade plan" iconSrc="assets/icons/bolt.svg"></app-button>
+    </div>
+</div>

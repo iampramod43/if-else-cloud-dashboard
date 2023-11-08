@@ -1,0 +1,24 @@
+.main {
+    font-family: 'Inter';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: auto;
+    height: 36px;
+    border: solid 1px #E5E8EC;
+    max-width: 128px;
+    border-radius: 6px;
+    font-size: 12px;
+    padding: 0px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.main:hover{
+    background-color: #F9FAFB;
+}

@@ -1,0 +1,67 @@
+.iconsBar {
+    display: flex;
+    flex-direction: column;
+    flex: 0.1;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+
+    .top,
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .iconContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        .logoContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+
+            img {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+        .activeContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            border-radius: 6px;
+            background-color: #F9FAFB;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+
+            img {
+                border-radius: 50%;
+                border: solid 1px #e3e3e3;
+            }
+        }
+
+        .iconContainer:hover {
+            background-color: #F9FAFB;
+        }
+    }
+}

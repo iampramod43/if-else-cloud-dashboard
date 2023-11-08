@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    width: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+
+    .navBar {
+        display: flex;
+        flex: 0.05;
+    }
+
+    .dashboard {
+        display: flex;
+        flex: 0.95;
+    }
+}

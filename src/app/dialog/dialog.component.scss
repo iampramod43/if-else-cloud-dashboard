@@ -1,0 +1,27 @@
+.main {
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px 0 20px;
+        .left{
+            font-size: 18px;
+            font-weight: 600;
+            color: #282D3B;
+        }
+        .right{
+            img{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .body {
+
+        width: 500px;
+        height: 300px px;
+        padding: 24px;
+        box-sizing: border-box;
+
+    }
+}

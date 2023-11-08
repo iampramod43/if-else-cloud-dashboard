@@ -1,0 +1,108 @@
+<div class="main">
+    <div class="header">
+        <div class="left">
+            <div class="label">
+                Team members
+            </div>
+            <div class="chip">
+                <app-chip value="100 users" backgroundColor="#F8F5FE" textColor="#886FCE"></app-chip>
+            </div>
+        </div>
+        <div class="right">
+            <div class="iconContainer">
+                <img src="assets/icons/dotsVertical.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="tableSection">
+        
+        <table mat-table [dataSource]="dataSource" matSort>
+        
+            <ng-container *ngFor="let header of headers" [matColumnDef]="header.column_key">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header [align]="header.align">
+                    <span *ngIf="header.type !== 'select' && header.column_key !== 'role'">{{ header.column_name }}</span>
+                    <span *ngIf="header.column_key === 'role'">{{ header.column_name }}<img src="assets/icons/info.svg" alt=""></span>
+                    <span *ngIf="header.type == 'select'"><mat-checkbox (change)="$event ? toggleAllRows() : null" [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()">
+                    </mat-checkbox></span>
+
+                </th>
+                <td mat-cell *matCellDef="let element">
+                    <ng-container *ngIf="header.type === 'select'">
+                        <!-- Handle 'select' type -->
+                        <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null"
+                            [checked]="selection.isSelected(element)">
+                        </mat-checkbox>
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'name'">
+                        <!-- Handle 'name' type -->
+                        <div class="memberDetails">
+                            <div class="avatar">
+                                <img [src]="element.avatar" alt="">
+                            </div>
+                            <div class="nameId">
+                                <div class="name">
+                                    {{ element.name.first_name }} {{ element.name.last_name }}
+                                </div>
+                                <div class="handle">
+                                    {{ element.name.handle }}
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'status'">
+                        <!-- Handle 'status' type -->
+                        <div class="chips">
+                            <app-chip *ngIf="element.status === 'Customer'" [value]="element.status" backgroundColor="#F1FBF3"
+                                textColor="#6CB883" showStatus="true"></app-chip>
+                            <app-chip *ngIf="element.status === 'Churned'" [value]="element.status" backgroundColor="#F9F8F9"
+                                textColor="#7E8393" showStatus="true"></app-chip>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'text'">
+                        <!-- Handle 'text' type -->
+                        {{ element[header.column_key] }}
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'progress'">
+                        <!-- Handle 'progress' type -->
+                        <app-progress-bar [value]="element[header.column_key] + '%'"></app-progress-bar>
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'tags'">
+                        <!-- Handle 'tags' type -->
+                        <div class="chips">
+                            <app-chip *ngFor="let t of element[header.column_key]" [value]="t.value"
+                                [backgroundColor]="t.background_color" [textColor]="t.text_color"></app-chip>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="header.type === 'actions'">
+                        <div class="actionIcons">
+                            <img (click)="$event.stopPropagation();deleteRow(element.id)" src="assets/icons/trashBin.svg" alt="">
+                            <img (click)="$event.stopPropagation();editRow(element)" src="assets/icons/edit.svg" alt="">
+                        </div>
+                    </ng-container>
+                </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr class="rowElement" mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+        
+        </table>
+
+
+    </div>
+    <div class="paginationSection">
+        <div class="left">
+            <app-button label="Previous" iconSrc="assets/icons/left.svg" ></app-button>
+        </div>
+        <div class="center">
+            <div class="pages">
+            <div *ngFor="let page of pages" class="page" [ngClass]="{'activePage': page === activePage}">
+                {{ page }}
+            </div>
+            </div>
+        </div>
+        <div class="right">
+            <app-button direction="row-reverse" label="Next" iconSrc="assets/icons/right.svg"></app-button>
+        </div>
+    </div>
+</div>
