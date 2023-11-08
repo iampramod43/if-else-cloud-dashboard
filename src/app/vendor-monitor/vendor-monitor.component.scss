@@ -23,13 +23,13 @@
             .headerDetails {
                 .header {
                     font-size: 16px;
-                    color: #282D3B;
+                    color: var(--main-text-color);
                     font-weight: 500;
                 }
 
                 .subHeader {
                     font-size: 12px;
-                    color: #78818D;
+                    color: var(--sub-text-color);
                 }
             }
         }
@@ -67,12 +67,12 @@
             .mainLabel {
                 font-size: 14px;
                 font-weight: 600;
-                color: #282d3b;
+                color: var(--main-text-color);
             }
 
             .subText {
                 font-size: 12px;
-                color: #78818d;
+                color: var(--sub-text-color);
             }
         }
     }
